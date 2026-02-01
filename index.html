@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Valentine 💖</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff4b7d, #ff9a9e);
+      color: white;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 { font-size: 3rem; }
+    h2 { margin-top: 20px; }
+
+    .btns {
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yes {
+      background: #00e676;
+    }
+
+    #no {
+      background: #ff5252;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine, Mahi? ❤️</h1>
+  <h2>— From Jatin</h2>
+
+  <div class="btns">
+    <button id="yes" onclick="yesClicked()">Yes 😍</button>
+    <button id="no" onclick="moveNo()">No 😒</button>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function yesClicked() {
+  document.body.innerHTML = `
+        <h1>You said YES 🥹❤️</h1>
+        <h2>And honestly, that’s all I wanted.</h2>
+        <p style="max-width:600px; font-size:18px; line-height:1.6;">
+        This one word just made my entire day, my entire week,  
+        maybe even my entire year.
+        <br><br>
+        Thank you for choosing me.
+        </p>
+        <button onclick="goToStory()" style="
+        margin-top:20px;
+        padding:12px 30px;
+        font-size:18px;
+        border-radius:30px;
+        border:none;
+        background:#ffd166;
+        cursor:pointer;
+        ">
+        Read Our Story 💌
+        </button>
+    `;
+    }
+
+function goToStory() {
+  window.location.href = "story.html";
+}
+
+  </script>
+
+</body>
+</html>
